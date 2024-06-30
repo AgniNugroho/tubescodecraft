@@ -1,0 +1,39 @@
+.login-container {
+    -fx-background-color: #ffffff;
+    -fx-alignment: center;
+}
+
+.form-container {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+}
+
+.login-container Label {
+    -fx-font-size: 24;
+}
+
+.field-container {
+    -fx-alignment: top-center;
+    -fx-spacing: 10;
+}
+
+.field-container Label {
+    -fx-font-size: 14;
+}
+
+.field-container TextField {
+    background-color: #f0f0f0;
+    -fx-font-size: 12;
+    -fx-prefheight: 25;
+}
+
+.login-container Button {
+    -fx-font-size: 12;
+    background-color: #ffffff;
+}
+
+.login-container Button:hover {
+    -fx-cursor: hand;
+}
