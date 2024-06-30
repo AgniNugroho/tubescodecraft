@@ -26,19 +26,19 @@ public class LoginController {
     public void onLogin() throws Exception{
         String username = usernameField.getText();
         String password = passwordField.getText();
-        BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/CSV/Account.csv"));
-
-        String line;
-        reader.readLine();
-        while ((line = reader.readLine()) != null) {
-            String[] data = line.split(",");
-            for (int i = 0; i < data.length; i++) {
-                if (data[i].equals(username)) {
-                    if (data[i+1].equals(password)) {
-                        Stage stage = (Stage) loginBtn.getScene().getWindow();
-                        Model.getInstance().getViewFactory().removeStage(stage);
-                        Model.getInstance().getViewFactory().setCurrentUser(username);
-                        Model.getInstance().getViewFactory().showMainWindow();
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/CSV/Account.csv"))) {
+            String line;
+            reader.readLine();
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                for (int i = 0; i < data.length; i++) {
+                    if (data[i].equals(username)) {
+                        if (data[i+1].equals(password)) {
+                            Stage stage = (Stage) loginBtn.getScene().getWindow();
+                            Model.getInstance().getViewFactory().removeStage(stage);
+                            Model.getInstance().getViewFactory().setCurrentUser(username);
+                            Model.getInstance().getViewFactory().showMainWindow();
+                        }
                     }
                 }
             }
