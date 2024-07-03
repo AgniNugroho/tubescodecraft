@@ -16,5 +16,13 @@ public class MenuController {
         Model.getInstance().getViewFactory().removeStage(stage);
         Model.getInstance().getViewFactory().showLoginWindow();
     }
+
+    public void onHomepage() {
+        Model.getInstance().getViewFactory().getSelectedMenuItem().set("dashboard");
+    }
+
+    public void onCourse() {
+        Model.getInstance().getViewFactory().getSelectedMenuItem().set("course");
+    }
     
 }
