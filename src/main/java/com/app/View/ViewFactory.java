@@ -14,6 +14,7 @@ public class ViewFactory {
     private final StringProperty selectedMenuItem;
     private AnchorPane dashboardPane;
     private AnchorPane coursePane;
+    private AnchorPane certPane;
 
     public ViewFactory() {
         this.selectedMenuItem = new SimpleStringProperty("");
@@ -74,5 +75,17 @@ public class ViewFactory {
             }
         }
         return coursePane;
+    }
+
+    public AnchorPane getCertificateView(){
+        if (certPane == null) {
+            try {
+                certPane = new FXMLLoader(getClass().getResource("/FXML/certificate.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return certPane;
+
     }
 }

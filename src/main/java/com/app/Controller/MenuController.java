@@ -17,12 +17,16 @@ public class MenuController {
         Model.getInstance().getViewFactory().showLoginWindow();
     }
 
-    public void onHomepage() {
+    public void onDashboard() {
         Model.getInstance().getViewFactory().getSelectedMenuItem().set("dashboard");
     }
 
     public void onCourse() {
         Model.getInstance().getViewFactory().getSelectedMenuItem().set("course");
+    }
+
+    public void onCert() {
+        Model.getInstance().getViewFactory().getSelectedMenuItem().set("certificate");
     }
     
 }
