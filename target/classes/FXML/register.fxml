@@ -14,6 +14,7 @@
          <children>
             <VBox prefHeight="400.0" prefWidth="260.0" styleClass="logo-container">
                <children>
+                  <Label text="LOGO" />
                   <Label text="Wisata Hijau" />
                </children>
             </VBox>
