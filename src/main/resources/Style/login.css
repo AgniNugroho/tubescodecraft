@@ -1,39 +1,58 @@
 .login-container {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #fffbde;
     -fx-alignment: center;
+    -fx-font-family: "Arial";
 }
 
 .form-container {
-    -fx-background-color: #ffffff;
     -fx-padding: 20;
     -fx-spacing: 10;
     -fx-alignment: center;
 }
 
-.login-container Label {
-    -fx-font-size: 24;
+.field-container {
+    -fx-spacing: 10;
+    -fx-alignment: top-center;
 }
 
-.field-container {
-    -fx-alignment: top-center;
-    -fx-spacing: 10;
+.login-container Label {
+    -fx-font-size: 24;
+    -fx-text-fill: #264E49;
 }
+
 
 .field-container Label {
     -fx-font-size: 14;
 }
 
 .field-container TextField {
-    background-color: #f0f0f0;
+    -fx-background-color: #FFFFFF;
     -fx-font-size: 12;
     -fx-prefheight: 25;
 }
 
-.login-container Button {
+.field-container PasswordField {
+    -fx-background-color: #FFFFFF;
     -fx-font-size: 12;
-    background-color: #ffffff;
+    -fx-prefheight: 25;
 }
 
-.login-container Button:hover {
+.field-container Button {
+    -fx-font-size: 12;
+    -fx-background-color: #dde0bd;
+}
+
+.field-container Button:hover {
     -fx-cursor: hand;
+}
+
+.logo-container {
+    -fx-background-color: #264E49;
+    -fx-font-family: "Segoe UI Light";
+    -fx-alignment: center;
+}
+
+.logo-container Label {
+    -fx-text-fill: #fffbde;
+    -fx-font-size: 32;
 }
