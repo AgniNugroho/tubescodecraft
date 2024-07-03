@@ -6,8 +6,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class ViewFactory {
-
-    private String currentUser = null;
     
     public ViewFactory() {}
 
@@ -21,14 +19,6 @@ public class ViewFactory {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
-    }
-
-    public String getCurrentUser() {
-        return currentUser;
-    }
-
-    public void setCurrentUser(String currentUser) {
-        this.currentUser = currentUser;
     }
 
     public void removeStage(Stage stage) {

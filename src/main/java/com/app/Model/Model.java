@@ -6,9 +6,11 @@ public class Model {
 
     private static Model model;
     private final ViewFactory viewFactory;
+    private final Account account;
 
     private Model() {
         this.viewFactory = new ViewFactory();
+        this.account = new Account();
     }
 
     public static synchronized Model getInstance() {
@@ -20,5 +22,9 @@ public class Model {
     
     public ViewFactory getViewFactory() {
         return viewFactory;
+    }
+
+    public Account getAccount() {
+        return account;
     }
 }

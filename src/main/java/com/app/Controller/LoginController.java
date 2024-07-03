@@ -36,7 +36,7 @@ public class LoginController {
                         if (data[i+1].equals(password)) {
                             Stage stage = (Stage) loginBtn.getScene().getWindow();
                             Model.getInstance().getViewFactory().removeStage(stage);
-                            Model.getInstance().getViewFactory().setCurrentUser(username);
+                            Model.getInstance().getAccount().setCurrentUser(username);
                             Model.getInstance().getViewFactory().showMainWindow();
                         }
                     }

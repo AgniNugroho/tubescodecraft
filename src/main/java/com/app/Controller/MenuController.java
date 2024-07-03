@@ -11,7 +11,7 @@ public class MenuController {
     public Button logoutBtn;
 
     public void onLogout() throws Exception{
-        Model.getInstance().getViewFactory().setCurrentUser(null);
+        Model.getInstance().getAccount().setCurrentUser(null);
         Stage stage = (Stage) logoutBtn.getScene().getWindow();
         Model.getInstance().getViewFactory().removeStage(stage);
         Model.getInstance().getViewFactory().showLoginWindow();

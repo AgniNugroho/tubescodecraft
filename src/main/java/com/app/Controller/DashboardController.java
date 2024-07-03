@@ -14,7 +14,7 @@ public class DashboardController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        userLabel.setText("Welcome, " + Model.getInstance().getViewFactory().getCurrentUser());
+        userLabel.setText("Welcome, " + Model.getInstance().getAccount().getCurrentUser());
     }
     
 }
