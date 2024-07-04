@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -32,6 +33,10 @@ public class ViewFactory {
             e.printStackTrace();
         }
         Stage stage = new Stage();
+        stage.setTitle("Wisata Hijau Client");
+        Image icon = new Image(getClass().getResourceAsStream("/Picture/icon.png"));
+        stage.getIcons().add(icon);
+
         stage.setScene(scene);
         stage.show();
     }
