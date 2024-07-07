@@ -26,6 +26,9 @@ public class MainController implements Initializable{
                 case "profile":
                     mainView.setCenter(Model.getInstance().getViewFactory().getProfileView());
                     break;
+                case "introduction":
+                    mainView.setCenter(Model.getInstance().getViewFactory().getIntroView());
+                    break;
                 default:
                     break;
             }
