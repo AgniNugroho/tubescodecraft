@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.Controller.AdminController">
+   <children>
+      <Label fx:id="userLabel" layoutX="84.0" layoutY="66.0" text="userLabel">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <Button fx:id="logoutBtn" layoutX="102.0" layoutY="810.0" mnemonicParsing="false" onAction="#onLogout" text="Logout">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tvAkun" layoutX="446.0" layoutY="66.0" prefHeight="862.0" prefWidth="1424.0">
+        <columns>
+          <TableColumn fx:id="tcId" prefWidth="244.33331298828125" text="id" />
+          <TableColumn fx:id="tcUsername" minWidth="0.0" prefWidth="340.3333740234375" text="username" />
+            <TableColumn fx:id="tcNamaLengkap" prefWidth="913.6666259765625" text="namaLengkap" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

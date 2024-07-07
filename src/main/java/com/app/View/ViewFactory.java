@@ -61,6 +61,11 @@ public class ViewFactory {
         createStage(loader);
     }
 
+    public void showAdminWindow() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/admin.fxml"));
+        createStage(loader);
+    }
+
     public AnchorPane getDashboardView() {
         if (dashboardPane == null) {
             try {
