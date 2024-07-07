@@ -1,1 +1,26 @@
-[{"id":"WH1","role":true,"username":"admin","password":"admin","namaLengkap":"Admin"},{"id":"e9b5d191-ffec-4ab1-ba53-943f2ce415ad","role":false,"username":"echak111","password":"echak111","namaLengkap":"Ketzha"},{"id":"21cbe405-67f6-49b2-aa66-99dc39cfe2bd","role":false,"username":"ulil8","password":"qwerty","namaLengkap":"tazki ulil"}]
+[
+  {
+    "id": "WH1",
+    "role": true,
+    "username": "admin",
+    "password": "admin",
+    "namaLengkap": "Admin",
+    "c1Score": 0
+  },
+  {
+    "id": "e9b5d191-ffec-4ab1-ba53-943f2ce415ad",
+    "role": false,
+    "username": "echak111",
+    "password": "echak111",
+    "namaLengkap": "Ketzha",
+    "c1Score": 100
+  },
+  {
+    "id": "21cbe405-67f6-49b2-aa66-99dc39cfe2bd",
+    "role": false,
+    "username": "ulil8",
+    "password": "qwerty",
+    "namaLengkap": "tazki ulil",
+    "c1Score": 0
+  }
+]

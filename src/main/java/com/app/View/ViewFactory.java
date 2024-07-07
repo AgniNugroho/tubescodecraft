@@ -69,6 +69,16 @@ public class ViewFactory {
         createStage(loader,Model.getInstance().getAccount().getId());
     }
 
+    public void showAssignmentWindow() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/assignment.fxml"));
+        createStage(loader,Model.getInstance().getAccount().getId());
+    }
+
+    public void showCertificateWindow() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/viewCertificate.fxml"));
+        createStage(loader,Model.getInstance().getAccount().getId());
+    }
+
     public AnchorPane getDashboardView() {
         if (dashboardPane == null) {
             try {

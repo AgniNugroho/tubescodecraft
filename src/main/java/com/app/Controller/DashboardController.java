@@ -26,6 +26,7 @@ public class DashboardController {
     public void onLogout() throws IOException{
         Stage stage = (Stage) userLabel.getScene().getWindow();
         Model.getInstance().getViewFactory().removeStage(stage);
+        Model.getInstance().getAccount().saveAccount();
         Model.getInstance().getAccount().removeAccount();
         Model.getInstance().getViewFactory().showLoginWindow();
     }

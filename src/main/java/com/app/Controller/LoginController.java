@@ -69,12 +69,13 @@ public class LoginController {
                         String idJson = jsonObject.get("id").getAsString();
                         Boolean roleJson = jsonObject.get("role").getAsBoolean();
                         String namaJson = jsonObject.get("namaLengkap").getAsString();
+                        int c1Json = jsonObject.get("c1Score").getAsInt();
 
                         if (roleJson.equals(true)) {
                             if (username.equals(usernameJson) && password.equals(passwordJson)) {
                                 Stage stage = (Stage) loginBtn.getScene().getWindow();
                                 Model.getInstance().getViewFactory().removeStage(stage);
-                                Model.getInstance().getAccount().setAccount(idJson, roleJson, usernameJson, passwordJson, namaJson);
+                                Model.getInstance().getAccount().setAccount(idJson, roleJson, usernameJson, passwordJson, namaJson, c1Json);
                                 Model.getInstance().getViewFactory().showAdminWindow();
                                 return;
                             }
@@ -82,7 +83,7 @@ public class LoginController {
                         } else if (username.equals(usernameJson) && password.equals(passwordJson)) {
                             Stage stage = (Stage) loginBtn.getScene().getWindow();
                             Model.getInstance().getViewFactory().removeStage(stage);
-                            Model.getInstance().getAccount().setAccount(idJson, roleJson, usernameJson, passwordJson, namaJson);
+                            Model.getInstance().getAccount().setAccount(idJson, roleJson, usernameJson, passwordJson, namaJson, c1Json);
                             Model.getInstance().getViewFactory().showMainWindow();
                             return;
                         }
