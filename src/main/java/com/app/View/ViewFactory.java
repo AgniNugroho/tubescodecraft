@@ -16,6 +16,7 @@ public class ViewFactory {
     private AnchorPane dashboardPane;
     private AnchorPane coursePane;
     private AnchorPane certPane;
+    private AnchorPane profilePane;
 
     public ViewFactory() {
         this.selectedMenuItem = new SimpleStringProperty("");
@@ -92,5 +93,16 @@ public class ViewFactory {
         }
         return certPane;
 
+    }
+
+    public AnchorPane getProfileView() {
+        if (profilePane == null) {
+            try {
+                profilePane = new FXMLLoader(getClass().getResource("/FXML/profile.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return profilePane;
     }
 }

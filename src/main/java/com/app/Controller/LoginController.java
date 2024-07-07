@@ -8,12 +8,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.File;
+
 import javafx.stage.Stage;
 import com.app.Model.Model;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class LoginController {
-
-    private Boolean showAlert = true;
 
     @FXML
     public Button loginBtn;
@@ -27,33 +30,20 @@ public class LoginController {
     @FXML
     public Button registerBtn;
 
+    private static final String JSON_FILE_PATH = "src/main/resources/JSON/DataUser.json";
+
     public void onLogin() throws Exception{
         String username = usernameField.getText();
         String password = passwordField.getText();
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/CSV/Account.csv"))) {
-            String line;
-            reader.readLine();
-            while ((line = reader.readLine()) != null) {
-                String[] data = line.split(",");
-                for (int i = 0; i < data.length; i++) {
-                    if (data[i].equals(username)) {
-                        if (data[i+1].equals(password)) {
-                            Stage stage = (Stage) loginBtn.getScene().getWindow();
-                            showAlert = false;
-                            Model.getInstance().getViewFactory().removeStage(stage);
-                            Model.getInstance().getAccount().setCurrentUser(username);
-                            Model.getInstance().getViewFactory().showMainWindow();
-                        }
-                    }
-                }
-            }
-            if (showAlert) {
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Invalid username or password");
-                alert.setContentText("Please try again");
-                alert.showAndWait();
-            }
+
+        if (!username.isEmpty() && !password.isEmpty()) {
+            authenticate(username, password);
+        } else {
+            Alert alertWarning = new Alert(AlertType.WARNING);
+            alertWarning.setTitle("Warning");
+            alertWarning.setHeaderText("Kolom kosong");
+            alertWarning.setContentText("Semua kolom harus diisi!");
+            alertWarning.showAndWait();
         }
     }
 
@@ -61,5 +51,39 @@ public class LoginController {
         Stage stage = (Stage) registerBtn.getScene().getWindow();
         Model.getInstance().getViewFactory().removeStage(stage);
         Model.getInstance().getViewFactory().showRegisterWindow();;
+    }
+
+    @SuppressWarnings("unused")
+    public void authenticate(String username, String password) {
+        try {
+            File jsonFile = new File(JSON_FILE_PATH);
+            
+            if (jsonFile.exists()) {
+                try (BufferedReader reader = new BufferedReader(new FileReader(jsonFile))) {
+                    JsonArray jsonArray = JsonParser.parseReader(reader).getAsJsonArray();
+
+                    for (int i = 0; i < jsonArray.size(); i++) {
+                        JsonObject jsonObject = jsonArray.get(i).getAsJsonObject();
+                        String usernameJson = jsonObject.get("username").getAsString();
+                        String passwordJson = jsonObject.get("password").getAsString();
+
+                        if (username.equals(usernameJson) && password.equals(passwordJson)) {
+                            Stage stage = (Stage) loginBtn.getScene().getWindow();
+                            Model.getInstance().getViewFactory().removeStage(stage);
+                            Model.getInstance().getViewFactory().showMainWindow();
+                            return;
+                        }
+                    }
+                    Alert alertWarning = new Alert(AlertType.WARNING);
+                    alertWarning.setTitle("Warning");
+                    alertWarning.setHeaderText("Login Gagal");
+                    alertWarning.setContentText("Username atau password salah!");
+                    alertWarning.showAndWait();
+                    return;
+                }
+            }                
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

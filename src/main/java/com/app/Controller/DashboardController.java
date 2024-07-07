@@ -16,7 +16,7 @@ public class DashboardController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        userLabel.setText("Welcome, " + Model.getInstance().getAccount().getCurrentUser());
+        userLabel.setText(Model.getInstance().getAccount().getUsername());
     }
 
     public void onCourse() {
@@ -27,10 +27,14 @@ public class DashboardController implements Initializable{
         Model.getInstance().getViewFactory().getSelectedMenuItem().set("certificate");
     }
 
+    public void onProfile() {
+        Model.getInstance().getViewFactory().getSelectedMenuItem().set("profile");
+    }
+
     public void onLogout() throws IOException{
         Stage stage = (Stage) userLabel.getScene().getWindow();
-        Model.getInstance().getAccount().setCurrentUser(null);
         Model.getInstance().getViewFactory().removeStage(stage);
+        Model.getInstance().getAccount().removeAccount();
         Model.getInstance().getViewFactory().showLoginWindow();
     }
     
