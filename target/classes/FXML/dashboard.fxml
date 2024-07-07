@@ -39,7 +39,7 @@
                         <Image url="@../Picture/icons8-account-100.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="userLabel" layoutY="28.0" styleClass="username-label" text="userLabel" textFill="#fffbde" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="28.0">
+                  <Label fx:id="userLabel" layoutY="28.0" styleClass="username-label" text="Profile" textFill="#fffbde" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="28.0">
                      <font>
                         <Font name="Segoe UI Semibold" size="36.0" />
                      </font>
