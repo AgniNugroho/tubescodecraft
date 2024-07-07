@@ -2,6 +2,8 @@ package com.app.View;
 
 import java.io.IOException;
 
+import com.app.Model.Model;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +28,7 @@ public class ViewFactory {
         return selectedMenuItem;
     }
 
-    private void createStage(FXMLLoader loader) {
+    private void createStage(FXMLLoader loader, String id) {
         Scene scene = null;
         try {
             scene = new Scene(loader.load());
@@ -34,7 +36,7 @@ public class ViewFactory {
             e.printStackTrace();
         }
         Stage stage = new Stage();
-        stage.setTitle("Wisata Hijau Client");
+        stage.setTitle("client-"+id);
         Image icon = new Image(getClass().getResourceAsStream("/Picture/icon.png"));
         stage.getIcons().add(icon);
 
@@ -48,22 +50,22 @@ public class ViewFactory {
     
     public void showLoginWindow() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/login.fxml"));
-        createStage(loader);
+        createStage(loader,"");
     }
 
     public void showMainWindow() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/main.fxml"));
-        createStage(loader);
+        createStage(loader,Model.getInstance().getAccount().getId());
     }
 
     public void showRegisterWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/register.fxml"));
-        createStage(loader);
+        createStage(loader,"");
     }
 
     public void showAdminWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/admin.fxml"));
-        createStage(loader);
+        createStage(loader,Model.getInstance().getAccount().getId());
     }
 
     public AnchorPane getDashboardView() {
