@@ -70,7 +70,7 @@ public class LoginController {
                         Boolean roleJson = jsonObject.get("role").getAsBoolean();
                         String namaJson = jsonObject.get("namaLengkap").getAsString();
 
-                        if (idJson.equals("WH1")) {
+                        if (roleJson.equals(true)) {
                             if (username.equals(usernameJson) && password.equals(passwordJson)) {
                                 Stage stage = (Stage) loginBtn.getScene().getWindow();
                                 Model.getInstance().getViewFactory().removeStage(stage);
