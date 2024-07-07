@@ -23,9 +23,6 @@ public class MainController implements Initializable{
                 case "certificate":
                     mainView.setCenter(Model.getInstance().getViewFactory().getCertificateView());
                     break;
-                case "profile":
-                    mainView.setCenter(Model.getInstance().getViewFactory().getProfileView());
-                    break;
                 case "introduction":
                     mainView.setCenter(Model.getInstance().getViewFactory().getIntroView());
                     break;

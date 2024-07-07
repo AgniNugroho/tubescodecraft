@@ -18,7 +18,6 @@ public class ViewFactory {
     private AnchorPane dashboardPane;
     private AnchorPane coursePane;
     private AnchorPane certPane;
-    private AnchorPane profilePane;
     private AnchorPane introPane;
 
     public ViewFactory() {
@@ -79,6 +78,11 @@ public class ViewFactory {
         createStage(loader,Model.getInstance().getAccount().getId());
     }
 
+    public void showProfileWindow() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/profile.fxml"));
+        createStage(loader, Model.getInstance().getAccount().getId());
+    }
+
     public AnchorPane getDashboardView() {
         if (dashboardPane == null) {
             try {
@@ -111,17 +115,6 @@ public class ViewFactory {
         }
         return certPane;
 
-    }
-
-    public AnchorPane getProfileView() {
-        if (profilePane == null) {
-            try {
-                profilePane = new FXMLLoader(getClass().getResource("/FXML/profile.fxml")).load();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return profilePane;
     }
 
     public AnchorPane getIntroView() {
