@@ -83,6 +83,11 @@ public class ViewFactory {
         createStage(loader, Model.getInstance().getAccount().getId());
     }
 
+    public void showChangePasswordWindow() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/changePassword.fxml"));
+        createStage(loader, Model.getInstance().getAccount().getId());
+    }
+
     public AnchorPane getDashboardView() {
         if (dashboardPane == null) {
             try {

@@ -2,11 +2,50 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.Controller.ProfileController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1920.0" style="-fx-background-color: #fffbde;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.Controller.ProfileController">
    <children>
-      <Button fx:id="dashboardBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onDashboard" prefHeight="47.0" prefWidth="104.0" text="Back" />
-      <Label layoutX="150.0" layoutY="24.0" prefHeight="31.0" prefWidth="65.0" text="Profile" />
+      <Pane layoutY="250.0" prefHeight="750.0" prefWidth="1920.0" style="-fx-background-color: #f0f0f0;">
+         <children>
+            <Circle fill="SILVER" layoutX="265.0" layoutY="39.0" radius="150.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <ImageView fitHeight="418.0" fitWidth="582.0" layoutX="56.0" layoutY="-170.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Picture/avatar.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="nameLabel" layoutX="447.0" layoutY="1.0" text="nameLabel">
+               <font>
+                  <Font name="Segoe UI Bold" size="64.0" />
+               </font>
+            </Label>
+            <Label fx:id="usernameLabel" layoutX="447.0" layoutY="87.0" text="usernameLabel">
+               <font>
+                  <Font name="Segoe UI" size="36.0" />
+               </font>
+            </Label>
+            <Button layoutX="1551.0" layoutY="527.0" mnemonicParsing="false" onAction="#onChangePassword" text="Ganti Password">
+               <font>
+                  <Font name="Segoe UI Semibold" size="36.0" />
+               </font>
+            </Button>
+            <Button layoutX="1551.0" layoutY="633.0" mnemonicParsing="false" onAction="#onDeleteAccount" prefHeight="77.0" prefWidth="300.0" text="Hapus Akun">
+               <font>
+                  <Font name="Segoe UI Semibold" size="36.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../Picture/back.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="dashboardBtn" layoutX="14.0" mnemonicParsing="false" onAction="#onDashboard" opacity="0.0" prefHeight="100.0" prefWidth="100.0" text="Back" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>

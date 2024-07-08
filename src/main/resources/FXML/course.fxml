@@ -40,7 +40,7 @@
                <children>
                   <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="100.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0">
                      <image>
-                        <Image url="@../Picture/icons8-account-100.png" />
+                        <Image url="@../Picture/avatar_white.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="userLabel" layoutY="28.0" styleClass="username-label" text="Profile" textFill="#fffbde" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="28.0">
