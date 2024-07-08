@@ -54,7 +54,7 @@ public class LoginController {
     }
 
     @SuppressWarnings("unused")
-    public void authenticate(String username, String password) {
+    private void authenticate(String username, String password) {
         try {
             File jsonFile = new File(JSON_FILE_PATH);
             
