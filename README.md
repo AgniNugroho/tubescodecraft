@@ -1,7 +1,7 @@
 # Wisata Hijau
 ## Developed by CodeCraft Labs
 
-Aplikasi pendidikan pariwisata ramah lingkunhan
+Aplikasi pendidikan pariwisata ramah lingkungan
 
 
 Author:
