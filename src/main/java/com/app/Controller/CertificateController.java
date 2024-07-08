@@ -2,9 +2,15 @@ package com.app.Controller;
 
 import com.app.Model.Model;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class CertificateController {
+
+    @FXML
+    public Button dashboardBtn;
 
     public void onCourse() {
         Model.getInstance().getViewFactory().getSelectedMenuItem().set("course");
@@ -15,7 +21,9 @@ public class CertificateController {
     }
 
     public void onProfile() {
-        Model.getInstance().getViewFactory().getSelectedMenuItem().set("profile");
+        Stage stage = (Stage) dashboardBtn.getScene().getWindow();
+        Model.getInstance().getViewFactory().removeStage(stage);
+        Model.getInstance().getViewFactory().showProfileWindow();
     }
 
     public void onComingsoon() {
