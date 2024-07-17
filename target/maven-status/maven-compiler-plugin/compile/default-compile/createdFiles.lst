@@ -1,5 +1,4 @@
 com\app\Controller\LoginController.class
-com\app\Controller\CertificateController.class
 com\app\Model\DataAkun.class
 com\app\Controller\DashboardController.class
 com\app\Model\Model.class
@@ -9,6 +8,10 @@ com\app\App.class
 com\app\Controller\RegisterController.class
 com\app\Controller\CourseController.class
 com\app\Model\Account.class
+com\app\Controller\IntroductionController.class
 com\app\Controller\ProfileController.class
+com\app\Controller\ViewCertificateController.class
 com\app\View\ViewFactory.class
+com\app\Controller\ChangePasswordController.class
+com\app\Controller\AssignmentController.class
 com\app\Controller\MainController.class
