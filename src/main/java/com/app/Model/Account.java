@@ -18,7 +18,7 @@ public class Account {
     public String username;
     public String password;
     public String namaLengkap;
-    public int c1Score;
+    public double progress;
 
     public Account() {}
 
@@ -62,21 +62,21 @@ public class Account {
         this.namaLengkap = namaLengkap;
     }
 
-    public int getC1Score() {
-        return c1Score;
+    public double getProgress() {
+        return progress;
     }
 
-    public void setC1Score(int c1Score) {
-        this.c1Score = c1Score;
+    public void setProgress(double progress) {
+        this.progress = progress;
     }
 
-    public void setAccount(String id, Boolean role, String username, String password, String namaLengkap, int c1Score) {
+    public void setAccount(String id, Boolean role, String username, String password, String namaLengkap, double progress) {
         this.id = id;
         this.role = role;
         this.username = username;
         this.password = password;
         this.namaLengkap = namaLengkap;
-        this.c1Score = c1Score;
+        this.progress = progress;
     }
 
     public void saveAccount() {
@@ -117,6 +117,6 @@ public class Account {
         this.username = null;
         this.password = null;
         this.namaLengkap = null;
-        this.c1Score = 0;
+        this.progress = 0.0;
     }
 }

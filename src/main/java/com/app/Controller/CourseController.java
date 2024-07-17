@@ -17,7 +17,16 @@ public class CourseController {
     }
 
     public void onCert() {
-        Model.getInstance().getViewFactory().getSelectedMenuItem().set("certificate");
+        if (Model.getInstance().getAccount().getProgress() >= 0.7) {
+            Model.getInstance().getViewFactory().showCertificateWindow();
+            return;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Informasi");
+            alert.setHeaderText("Anda belum menyelesaikan materi ini.");
+            alert.showAndWait();
+            return;
+        }
     }
 
     public void onProfile() {

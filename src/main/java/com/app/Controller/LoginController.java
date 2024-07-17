@@ -1,5 +1,7 @@
 package com.app.Controller;
 
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -68,13 +70,13 @@ public class LoginController {
                         String idJson = jsonObject.get("id").getAsString();
                         Boolean roleJson = jsonObject.get("role").getAsBoolean();
                         String namaJson = jsonObject.get("namaLengkap").getAsString();
-                        int c1Json = jsonObject.get("c1Score").getAsInt();
+                        double progress = jsonObject.get("progress").getAsDouble();
 
                         if (roleJson.equals(true)) {
                             if (username.equals(usernameJson) && password.equals(passwordJson)) {
                                 Stage stage = (Stage) loginBtn.getScene().getWindow();
                                 Model.getInstance().getViewFactory().removeStage(stage);
-                                Model.getInstance().getAccount().setAccount(idJson, roleJson, usernameJson, passwordJson, namaJson, c1Json);
+                                Model.getInstance().getAccount().setAccount(idJson, roleJson, usernameJson, passwordJson, namaJson, progress);
                                 Model.getInstance().getViewFactory().showAdminWindow();
                                 return;
                             }
@@ -82,7 +84,7 @@ public class LoginController {
                         } else if (username.equals(usernameJson) && password.equals(passwordJson)) {
                             Stage stage = (Stage) loginBtn.getScene().getWindow();
                             Model.getInstance().getViewFactory().removeStage(stage);
-                            Model.getInstance().getAccount().setAccount(idJson, roleJson, usernameJson, passwordJson, namaJson, c1Json);
+                            Model.getInstance().getAccount().setAccount(idJson, roleJson, usernameJson, passwordJson, namaJson, progress);
                             Model.getInstance().getViewFactory().showMainWindow();
                             return;
                         }

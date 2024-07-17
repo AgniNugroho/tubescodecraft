@@ -132,4 +132,11 @@ public class ViewFactory {
         }
         return introPane;
     }
+
+    public void unloadDashboard() {
+        dashboardPane = null;
+        coursePane = null;
+        certPane = null;
+        introPane = null;
+    }
 }

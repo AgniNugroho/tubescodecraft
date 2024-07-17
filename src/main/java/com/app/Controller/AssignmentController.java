@@ -18,22 +18,22 @@ public class AssignmentController {
     
     public void onSubmit() throws Exception{
 
-        int score = 0;
+        double score = Model.getInstance().getAccount().getProgress();
         if (rb1Benar.isSelected()) {
-            score += 25;
+            score += 0.125;
         }
         if (rb2Salah.isSelected()) {
-            score += 25;
+            score += 0.125;
         }
         if (rb3Benar.isSelected()) {
-            score += 25;
+            score += 0.125;
         }
         if (rb4Benar.isSelected()) {
-            score += 25;
+            score += 0.125;
         }
 
         Stage stage = (Stage) submitBtn.getScene().getWindow();
-        Model.getInstance().getAccount().setC1Score(score);
+        Model.getInstance().getAccount().setProgress(score);
         Model.getInstance().getViewFactory().removeStage(stage);
         Model.getInstance().getViewFactory().showMainWindow();
         Model.getInstance().getViewFactory().getSelectedMenuItem().set("course");

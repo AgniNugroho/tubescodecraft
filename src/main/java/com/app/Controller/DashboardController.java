@@ -1,7 +1,10 @@
 package com.app.Controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+
 import com.app.Model.Model;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -12,16 +15,15 @@ import javafx.fxml.Initializable;
 public class DashboardController implements Initializable {
 
     @FXML
-    public Label greetLabel, classStatus;
+    public Label greetLabel;
+    
+    @FXML
+    public ProgressBar introProgressBar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         greetLabel.setText("Selamat Datang, " + Model.getInstance().getAccount().getUsername());
-        if (Model.getInstance().getAccount().getC1Score() >= 75) {
-            classStatus.setText("Lulus");
-        } else {
-            classStatus.setText("Belum Lulus");
-        }
+        introProgressBar.setProgress(Model.getInstance().getAccount().getProgress());
     }
 
     public void onCourse() {
@@ -29,7 +31,16 @@ public class DashboardController implements Initializable {
     }
 
     public void onCert() {
-        Model.getInstance().getViewFactory().getSelectedMenuItem().set("certificate");
+        if (Model.getInstance().getAccount().getProgress() >= 0.7) {
+            Model.getInstance().getViewFactory().showCertificateWindow();
+            return;
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Informasi");
+            alert.setHeaderText("Anda belum menyelesaikan materi ini.");
+            alert.showAndWait();
+            return;
+        }
     }
 
     public void onProfile() {
@@ -43,6 +54,7 @@ public class DashboardController implements Initializable {
         Model.getInstance().getViewFactory().removeStage(stage);
         Model.getInstance().getAccount().saveAccount();
         Model.getInstance().getAccount().removeAccount();
+        Model.getInstance().getViewFactory().unloadDashboard();
         Model.getInstance().getViewFactory().showLoginWindow();
     }
     

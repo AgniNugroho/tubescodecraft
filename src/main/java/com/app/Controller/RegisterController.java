@@ -80,6 +80,7 @@ public class RegisterController {
             newUserObject.addProperty("username", username);
             newUserObject.addProperty("password", password);
             newUserObject.addProperty("namaLengkap", nama);
+            newUserObject.addProperty("progress", 0.0);
 
             userArray.add(newUserObject);
 

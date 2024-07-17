@@ -5,7 +5,7 @@
     "username": "admin",
     "password": "admin",
     "namaLengkap": "Admin",
-    "c1Score": 0
+    "progress": 0.0
   },
   {
     "id": "e9b5d191-ffec-4ab1-ba53-943f2ce415ad",
@@ -13,6 +13,14 @@
     "username": "echak111",
     "password": "echak",
     "namaLengkap": "Ketzha",
-    "c1Score": 100
+    "progress": 1.0
+  },
+  {
+    "id": "3e1f1d47-62e7-4d47-97a0-ff4bdd76c4b0",
+    "role": false,
+    "username": "test",
+    "password": "001test",
+    "namaLengkap": "TES001",
+    "progress": 0.0
   }
 ]

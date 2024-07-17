@@ -25,6 +25,7 @@ public class IntroductionController {
 
         if (alert.getResult().getText().equals("OK")) {
             Stage stage = (Stage) backBtn.getScene().getWindow();
+            Model.getInstance().getAccount().setProgress(0.5);
             Model.getInstance().getViewFactory().removeStage(stage);
             Model.getInstance().getViewFactory().showAssignmentWindow();
         }
