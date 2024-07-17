@@ -53,7 +53,6 @@ public class LoginController {
         Model.getInstance().getViewFactory().showRegisterWindow();;
     }
 
-    @SuppressWarnings("unused")
     private void authenticate(String username, String password) {
         try {
             File jsonFile = new File(JSON_FILE_PATH);
