@@ -6,11 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
+
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.File;
 
-import javafx.stage.Stage;
 import com.app.Model.Model;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;

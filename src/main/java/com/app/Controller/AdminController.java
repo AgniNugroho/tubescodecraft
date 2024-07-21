@@ -1,23 +1,25 @@
 package com.app.Controller;
 
-import java.io.IOException;
-import com.app.Model.Model;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonParser;
-import com.google.gson.JsonObject;
-import java.io.File;
-import com.app.Model.DataAkun;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.util.ResourceBundle;
+import java.net.URL;
+
+import com.app.Model.Model;
+import com.app.Model.DataAkun;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParser;
 
 public class AdminController implements Initializable {
 
