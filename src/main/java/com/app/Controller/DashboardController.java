@@ -54,7 +54,7 @@ public class DashboardController implements Initializable {
         Model.getInstance().getViewFactory().removeStage(stage);
         Model.getInstance().getAccount().saveAccount();
         Model.getInstance().getAccount().removeAccount();
-        Model.getInstance().getViewFactory().unloadDashboard();
+        Model.getInstance().getViewFactory().unloadApp();
         Model.getInstance().getViewFactory().showLoginWindow();
     }
     

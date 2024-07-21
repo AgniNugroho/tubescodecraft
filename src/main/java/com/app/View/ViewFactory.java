@@ -133,7 +133,7 @@ public class ViewFactory {
         return introPane;
     }
 
-    public void unloadDashboard() {
+    public void unloadApp() {
         dashboardPane = null;
         coursePane = null;
         certPane = null;
