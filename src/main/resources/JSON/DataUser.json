@@ -22,5 +22,13 @@
     "password": "001test",
     "namaLengkap": "TES001",
     "progress": 0.0
+  },
+  {
+    "id": "8966196a-a4ce-402c-be3e-58d6d456fd82",
+    "role": false,
+    "username": "test2",
+    "password": "002tese",
+    "namaLengkap": "TES002",
+    "progress": 0.0
   }
 ]

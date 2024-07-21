@@ -1,9 +1,5 @@
 package com.app.View;
 
-import java.io.IOException;
-
-import com.app.Model.Model;
-
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +7,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+
+import com.app.Model.Model;
 
 public class ViewFactory {
     

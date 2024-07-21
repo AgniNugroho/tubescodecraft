@@ -15,6 +15,8 @@ import java.io.FileReader;
 import java.util.UUID;
 
 import com.app.Model.Model;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -53,6 +55,7 @@ public class RegisterController {
         try {
             File jsonFile = new File(JSON_FILE_PATH);
             BufferedReader reader = new BufferedReader(new FileReader(jsonFile));
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
             JsonElement jsonElement = JsonParser.parseReader(reader);
             reader.close();
 
@@ -85,9 +88,7 @@ public class RegisterController {
             userArray.add(newUserObject);
 
             try (FileWriter writer = new FileWriter(jsonFile)) {
-                writer.write(userArray.toString());
-                writer.flush();
-                writer.close();
+                gson.toJson(userArray, writer);
             }
 
             Alert alert = new Alert(AlertType.INFORMATION);

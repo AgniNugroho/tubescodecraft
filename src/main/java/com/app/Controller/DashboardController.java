@@ -4,13 +4,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-
-import com.app.Model.Model;
 import javafx.stage.Stage;
+import javafx.fxml.Initializable;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+
+import com.app.Model.Model;
 
 public class DashboardController implements Initializable {
 
